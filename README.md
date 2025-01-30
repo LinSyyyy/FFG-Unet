@@ -1,1 +1,1 @@
-# KAC-Unet:
+# FFG-Unet
