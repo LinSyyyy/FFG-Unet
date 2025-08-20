@@ -1,1 +1,1 @@
-# FFG-Unet: comming soon
+# FFG-Unet: A Medical Image Segmentation  Model with Frequency Feature Guidance
