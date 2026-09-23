@@ -6,10 +6,10 @@ import torch.nn.functional as F
 class WeightUpdateModule(nn.Module):
       def __init__(self, num_channels):
           super(WeightUpdateModule, self).__init__()
-          self.fc1 = nn.Conv1d(num_channels*2, num_channels,kernel_size=1)  # 全连接层
-          self.fc2 = nn.Linear(num_channels, num_channels)  # 全连接层
-          self.relu = nn.ReLU()  # ReLU 激活
-          self.sigmoid = nn.Sigmoid()  # Sigmoid 激活
+          self.fc1 = nn.Conv1d(num_channels*2, num_channels,kernel_size=1)  
+          self.fc2 = nn.Linear(num_channels, num_channels) 
+          self.relu = nn.ReLU()  
+          self.sigmoid = nn.Sigmoid() 
 #
       def forward(self, x):
           x3 = F.max_pool2d(x, 2, 2)
