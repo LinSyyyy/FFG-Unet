@@ -14,7 +14,7 @@ def mask_to_onehot(mask, palette):
     semantic_map = [ ]
     for colour in palette:
         equality = np.equal(mask, colour)
-        class_map = np.all(equality, axis=-1)   # 沿对应轴进行与运算0，1对应行列，-1为所有维度最后一个维度主要参考shape
+        class_map = np.all(equality, axis=-1) 
         semantic_map.append(class_map)
     semantic_map = np.stack(semantic_map, axis=-1).astype(np.float32)
     return semantic_map
