@@ -459,9 +459,6 @@ class segGuid(nn.Module):
         self.srm_conv0 = SRMConv2d_simple(inc=3)
         self.encoder = SwinTransformer(depths=[2, 2, 2, 2], num_heads=[4, 8, 16, 32], drop_path_rate=0.5,
                                        embed_dim=32)
-        # self.encoder.init_weights(
-        #     pretrained="C:/Users/msi/Desktop/DS-TransUNet-master/checkpoints/swinv2_tiny_patch4_window8_256.pth"
-        # )
 
         self.encoder.init_weights(
             pretrained="./swinv2_tiny_patch4_window8_256.pth"
@@ -492,6 +489,6 @@ if __name__=="__main__":
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model.to(device)
     _, params = profile(model, inputs=(x,))
-    print("参数量：", params / 1e6)
+    print("parms:", params / 1e6)
 
 
